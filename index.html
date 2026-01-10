@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- 正确的viewport -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Landing</title>
+  <!-- 引入本地图标样式文件 -->
+  <link rel="stylesheet" href="./fonts/iconfont.css">
+  <style>
+    body {
+      margin: 0;
+      background: #2f2f2f;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .my-icon {
+      font-size: 26px;
+      color: #111;
+      margin: 0 8px;
+    }
+
+    .my-icon2 {
+      font-size: 40px;
+      color: #ffcc00;
+      margin: 0 8px;
+    }
+
+    .my-icon3 {
+      font-size: 26px;
+      color: #FFF;
+      margin: 0 8px;
+    }
+
+    .my-icon4 {
+      font-size: 18px;
+      color: #FFF;
+      margin: 0 8px;
+    }
+
+    .container {
+      padding: 40px 15px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 36px;
+      font-style: italic;
+      margin-bottom: 15px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .stock {
+      font-size: 36px;
+      color: #ffcc00;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .sub {
+      font-size: 36px;
+      color: #ffcc00;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .earn {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-shadow: rgb(255, 255, 255) 0px 0px 10px;
+    }
+
+    .amount {
+      font-size: 34px;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 0 8px #fff;
+      animation: pulse 1.1s ease-in-out infinite;
+    }
+
+    /* 金额呼吸动画 */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.09);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .profit {
+      margin-top: 15px;
+      font-size: 32px;
+      font-weight: 700;
+      text-shadow: 0 0 6px #fff;
+    }
+
+    .guarantee {
+      margin-top: 20px;
+      font-size: 36px;
+      font-weight: 900;
+      color: #ffcc00;
+      text-shadow: 0 0 6px #ffcc00;
+    }
+
+    .imgBox {
+      padding: 0 15px;
+    }
+
+    .imgBox img {
+      width: 100%;
+    }
+
+    /* === 新增按钮区域 === */
+
+    .section2 {
+      margin-top: 50PX;
+      padding: 25px 10px;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      box-shadow: 3px 2px 5px 2px rgba(0, 0, 0, .4);
+      text-align: center;
+    }
+
+
+    .section3 {
+      margin-top: 50px;
+      padding: 25px 10px;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .section4 {
+      padding: 25px 10px;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .join-btn {
+      display: inline-block;
+      background: #ffcc00;
+      color: #111;
+      font-size: 28px;
+      font-weight: 900;
+      padding: 12px 26px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      transition: transform .25s ease;
+    }
+
+    /* 悬停放大 */
+    .join-btn:hover {
+      transform: scale(1.12);
+    }
+
+    .spots {
+      font-size: 14px;
+      margin-top: 4px;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .question {
+      margin: 25px 0;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .question .highlight {
+      color: #ff3b3b;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .text1 {
+      font-size: 16px;
+      color: whitesmoke;
+      font-family: Roboto, Helvetica, sans-serif !important;
+      letter-spacing: 2px;
+    }
+
+    .maskBox {
+      position: relative;
+      text-align: center;
+      background-color: rgb(96, 96, 96);
+      padding: 30px 0 20px;
+      margin-top: 20px;
+    }
+
+    /* 添加遮罩层 */
+    .maskBox::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(96, 96, 96, 0.3);
+      z-index: 1;
+      pointer-events: none;
+      /* 允许点击穿透到下层内容 */
+    }
+
+    .discussBox {
+      padding: 40px 15px 10px;
+    }
+
+    .discussBox img {
+      width: 60%;
+    }
+
+    .maskBox2 {
+      margin-top: 80px;
+      position: relative;
+    }
+
+    /* 添加遮罩层 */
+    .maskBox2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(47, 47, 47, 0.6);
+      z-index: 1;
+      pointer-events: none;
+      /* 允许点击穿透到下层内容 */
+    }
+
+    .section4 {
+      padding-bottom: 140px;
+    }
+
+    .section4 p {
+      color: #888;
+      font-size: 12px;
+    }
+
+    .section5 {
+      background: #2f2f2f;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      /* 紧贴底部 */
+      left: 0;
+      padding: 25px 10px;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="title">Join the Elite</div>
+    <div class="stock"><i class="iconfont icon-line-bar my-icon2"></i>STOCK</div>
+    <div class="sub">Signal Group</div>
+
+    <div class="earn">Earn</div>
+    <div class="amount">$10,000~$30,000+</div>
+
+    <div class="profit">Profit Every Day</div>
+    <div class="guarantee"><i class="iconfont icon-double-left-1 my-icon3"></i>We Guaranty it.<i
+        class="iconfont icon-double-left my-icon3"></i></div>
+  </div>
+  <div class="imgBox">
+    <img src="./images/1.jpg" alt="">
+  </div>
+  <div class="section2">
+    <div class="join-btn" onclick="window.location.href='https://sdlink.vip/XnWJWj'"><i class="iconfont icon-double-left-1 my-icon"></i>Join Group<i
+        class="iconfont icon-double-left my-icon"></i></div>
+    <div class="spots">Free spots left: <span class="spots-num">77</span>, so act now !!!</div>
+  </div>
+  <div>
+    <div class="question">
+      Ready to boost your earnings by
+      <span class="highlight">30%~90%↑</span>
+      daily in the
+      stock market?
+    </div>
+  </div>
+  <div class="imgBox">
+    <img src="./images/2.jpg" alt="">
+  </div>
+  <div style="padding: 0 20px;">
+    <p class="text1">
+      I post daily insights on the S&P 500 (SPY), Nasdaq 100 (QQQ), Russell 2000 (IWM), USD (DXY), Bitcoin, and any
+      stocks you want in-depth analysis on. As a passionate trader, I live for technical analysis and love helping
+      others succeed!
+    </p>
+    <p>
+      <b style="font-size: 18px; color: whitesmoke;"><i class="iconfont icon-gougou my-icon4"></i>JJoin our trading
+        signals group on your phone—it's <b style="color:#FF3131">simple to get started.</b>
+    </p>
+
+    <p>
+      <b style="font-size: 18px; color: whitesmoke;"><i class="iconfont icon-gougou my-icon4"></i>Watch your wealth grow
+        by<b style="color:#FF3131"> over 300%↑ </b>in just one week with a single bold move.
+      </b>
+    </p>
+
+    <p>
+      <b style="font-size: 18px; color: whitesmoke;"><i class="iconfont icon-gougou my-icon4"></i> Receive daily trading
+        plans—<b style="color:#FF3131"> just follow </b> them and start earning<b style="color:#FF3131"> $10,000↑ </b>in
+        profits every day.
+      </b>
+    </p>
+
+    <p>
+      <b style="font-size: 18px; color: whitesmoke;"><i class="iconfont icon-gougou my-icon4"></i>Click the link below
+        to<b style="color:#FF3131"> begin growing </b> your wealth today!
+      </b>
+    </p>
+
+  </div>
+  <div class="section3">
+    <div class="join-btn" onclick="window.location.href='https://sdlink.vip/XnWJWj'">
+      <i class="iconfont icon-double-left-1 my-icon"></i>
+      Join Group
+      <i class="iconfont icon-double-left my-icon"></i>
+    </div>
+    <div class="spots">Free spots left: <span class="spots-num">77</span>, so act now !!!</div>
+  </div>
+  <div class="maskBox">
+    <p>Featured In...</p>
+    <img style="width: 90%;" src="./images/3.png" alt="">
+  </div>
+  <div class="discussBox">
+    <!-- 一 -->
+    <p>
+      <i style="color: whitesmoke;">"Can you imagine? I pulled in $90,000 this month alone... the returns are
+        unreal!!"</i>
+    </p>
+    <p style="text-align: center;">
+      <img src="./images/Lucas Green.png" alt="">
+    </p>
+    <!-- 二 -->
+    <p style="margin-top: 30px;">
+      <i style="color: whitesmoke;">"In just two weeks, I made $47,000... I'm still in shock at how fast it all came
+        together!"</i>
+    </p>
+    <p style="text-align: center;">
+      <img src="./images/Raymond Beers.png" alt="">
+    </p>
+    <!-- 三 -->
+    <p style="margin-top: 30px;">
+      <i style="color: whitesmoke;">"I was always too busy to properly research stocks, but now, it feels like I’ve got
+        my own personal strategy in my pocket. It’s been paying off big time."</i>
+    </p>
+    <p style="text-align: center;">
+      <img src="./images/Bradley Smith.png" alt="">
+    </p>
+    <!-- 四 -->
+    <p style="margin-top: 30px;">
+      <i style="color: whitesmoke;">"I can’t even explain how much of a game-changer this has been. My returns have
+        started picking up, and I feel like I’m ahead of the curve now."</i>
+    </p>
+    <p style="text-align: center;">
+      <img src="./images/Chloe Carter.png" alt="">
+    </p>
+    <!-- 五 -->
+    <p style="margin-top: 30px;">
+      <i style="color: whitesmoke;">"I hit $360,000 this month... and this is only the beginning! The future looks
+        incredibly bright."</i>
+    </p>
+    <p style="text-align: center;">
+      <img src="./images/Tyler Martin.png" alt="">
+    </p>
+    <!-- 六 -->
+    <p style="margin-top: 30px;">
+      <i style="color: whitesmoke;">"I told friends who didn't believe me until they saw the money I made last
+        week...."</i>
+    </p>
+    <p style="text-align: center;">
+      <img src="./images/Victoria Adams.png" alt="">
+    </p>
+    <!-- 七 -->
+    <p style="margin-top: 30px;">
+      <i style="color: whitesmoke;">"I made $6,000 a day last week, it's like I’ve found a whole new world of
+        opportunities!"</i>
+    </p>
+    <p style="text-align: center;">
+      <img src="./images/Daniel Scott.png" alt="">
+    </p>
+    <!-- 八 -->
+    <p style="margin-top: 30px;">
+      <i style="color: whitesmoke;"><i class="dark" style="color: whitesmoke;">“undefined...”</i></i>
+    </p>
+    <p style="text-align: center;">
+      <img src="./images/Elise Mitchell.png" alt="">
+    </p>
+  </div>
+  <div class="section4">
+    <div class="join-btn" onclick="window.location.href='https://sdlink.vip/XnWJWj'"><i class="iconfont icon-double-left-1 my-icon"></i>Join Group<i
+        class="iconfont icon-double-left my-icon"></i></div>
+    <div class="spots">Free spots left: <span class="spots-num">77</span>, so act now !!!</div>
+    <div class="maskBox2">
+      <img style="width: 80%;" src="./images/4.png" alt="">
+    </div>
+    <p>Terms & Conditions | Privacy | Support / Contact Us</p>
+  </div>
+  <div class="section5">
+    <div class="join-btn" onclick="window.location.href='https://sdlink.vip/XnWJWj'"><i class="iconfont icon-double-left-1 my-icon"></i>Join Group<i
+        class="iconfont icon-double-left my-icon"></i></div>
+    <div class="spots">Free spots left: <span class="spots-num">77</span>, so act now !!!</div>
+  </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const num = Math.floor(Math.random() * (90 - 70 + 1)) + 70;
+  // 获取所有具有 spots-num 类的元素
+  const spotsNumElements = document.querySelectorAll(".spots-num");
+  // 为每个元素设置随机数
+  spotsNumElements.forEach(element => {
+    element.textContent = num;
+  });
+});
+</script>
+
+</body>
+
+</html>
